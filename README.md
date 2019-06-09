@@ -8,5 +8,5 @@ Para executar em ambiente de desenvolvimento execute o comando `ng serve`. Naveg
 
 Antes de executar, certifique-se de que o servidor em que o web server que contém as APIs utilizadas pelo frontend está executando em `http://localhost:8080/`.
 
-Para informações sobre como executar o web server, consulte o o arquivo README.md do projeto `crud-funcionario-webservice`.
+Para informações sobre como executar o web server, consulte o o arquivo README.md do projeto [`crud-funcionario-webservice`](https://github.com/leloti/crud-funcionario-webservice).
 
