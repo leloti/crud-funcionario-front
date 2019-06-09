@@ -4,7 +4,7 @@ Este projeto foi gerado utiliando o [Angular CLI](https://github.com/angular/ang
 
 ## Development server
 
-Para executar em ambiente de desenvolvimento executre o comando `ng serve`. Navegue até `http://localhost:4200/`. Este app irá recarregar todas as alterações realizadas nos arquivos de código fonte.
+Para executar em ambiente de desenvolvimento execute o comando `ng serve`. Navegue até `http://localhost:4200/`. Este app irá recarregar automaticamente todas as alterações realizadas nos arquivos de código fonte.
 
 Antes de executar, certifique-se de que o servidor em que o web server que contém as APIs utilizadas pelo frontend está executando em `http://localhost:8080/`.
 
