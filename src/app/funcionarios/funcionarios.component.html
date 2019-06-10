@@ -1,0 +1,61 @@
+<!-- <h2>Funcionarios</h2>
+<button (click)="getFuncionarios()">Buscar!</button>
+
+<ul class="funcionarios">
+  <li *ngFor="let funcionario of funcionarios">
+    <span class="badge">{{funcionario.id}}</span> - {{funcionario.nome}}
+  </li>
+</ul> -->
+
+<div class="container">
+  <div class="table-wrapper">
+    <div class="table-title">
+      <div class="row">
+        <div class="col-sm-8">
+          <h2>Funcionários Cadastrados</h2>
+        </div>
+        <div class="col-sm-4">
+          <button type="button" class="btn btn-info add-new" (click)=adicionarFuncionario()>
+            <i class="fa fa-plus"></i> Adicionar</button>
+        </div>
+      </div>
+    </div>
+    <table class="table table-bordered">
+      <thead>
+        <tr>
+          <th>Id</th>
+          <th>Nome</th>
+          <th>Email</th>
+        </tr>
+      </thead>
+      <tbody *ngFor="let funcionario of funcionarios">
+        <tr>
+          <td>{{funcionario.id}}</td>
+          <td>{{funcionario.nome}}</td>
+          <td>{{funcionario.email}}</td>
+          <td>
+            <a class="edit" title="Editar" data-toggle="tooltip" (click)=editarFuncionario(funcionario.id)><i class="material-icons">&#xE254;</i></a>
+          </td>
+          <td>
+              <a class="delete" title="Deletar" data-toggle="tooltip" (click)="deletarFuncionario(funcionario)">
+                <i class="material-icons">&#xE872;</i>
+              </a>
+          </td>
+        </tr>        
+      </tbody>
+    </table>
+  </div>
+</div>
+
+<!-- <h2>{{funcionario.nome | uppercase}} Detalhes</h2>
+<div><span>id: </span>{{funcionario.id}}</div>
+<div><span>nome: </span>{{funcionario.nome}}</div>
+<div><span>sobrenome: </span>{{funcionario.sobrenome}}</div>
+<div><span>email: </span>{{funcionario.sobrenome}}</div>
+<div><span>numero pis: </span>{{funcionario.numeroPis}}</div>
+<br>
+<div>
+  <label>name:
+    <input [(ngModel)]="funcionario.nome" placeholder="nome" />
+  </label>
+</div> -->

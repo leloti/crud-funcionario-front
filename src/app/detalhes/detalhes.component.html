@@ -1,0 +1,109 @@
+<div class="container">
+  <div class="table-wrapper">
+    <div class="table-title">
+      <div class="row">
+        <div class="col-sm-8">
+          <h2 *ngIf="!ehEdicao">Adicionar Funcionario</h2>
+          <h2 *ngIf="ehEdicao">Editar Funcionario</h2>
+        </div>
+      </div>
+    </div>
+
+    <form [formGroup]="funcionarioForm" #formDir="ngForm" class="col-md-6">
+
+      <div [hidden]="formDir.submitted">
+
+        <div class="cross-validation"
+          [class.cross-validation-error]="funcionarioForm.errors?.identityRevealed && (funcionarioForm.touched || funcionarioForm.dirty)">
+          <div class="form-group">
+
+            <div id="idFuncionario" class="form-group col-md-4 no-padding-left">
+              <label for="id">ID</label>
+              <input id="id" class="form-control" formControlName="id" maxlength="30" placeholder="ID" disabled>
+            </div>
+
+            <div id="nomeFuncionario" class="form-group col-md-8 no-padding-left">
+              <label for="nome">Nome</label>
+              <input id="nome" class="form-control" formControlName="nome" maxlength="30" placeholder="Nome">
+
+              <div *ngIf="nome.invalid && (nome.dirty || nome.touched)" class="alert alert-danger">
+                <div *ngIf="nome.errors.required">
+                  Campo nome é obrigatório.
+                </div>
+                <div *ngIf="nome.errors.minlength">
+                  Nome deve ter no mínimo 2 caracteres.
+                </div>
+
+                <div *ngIf="nome.errors.maxlength">
+                  Nome deve ter no máximo 30 caracteres.
+                </div>
+              </div>
+            </div>
+
+            <div id="sobrenomeFuncionario" class="form-group col-md-12 no-padding-left">
+              <label for="sobrenome">Sobrenome</label>
+              <input id="sobrenome" name="sobrenome" formControlName="sobrenome" class="form-control"
+                placeholder="Sobrenome" maxlength="50">
+
+              <div *ngIf="sobrenome.invalid && (sobrenome.dirty || sobrenome.touched)" class="alert alert-danger">
+                <div *ngIf="sobrenome.errors.required">
+                  Campo sobrenome é obrigatório.
+                </div>
+
+                <div *ngIf="sobrenome.errors.minlength">
+                  Sobrenome deve ter no mínimo 2 caracteres.
+                </div>
+
+              </div>
+            </div>
+
+            <div id="emailFuncionario" class="form-group col-md-12 no-padding-left">
+              <label for="email">Email</label>
+              <input id="email" name="email" formControlName="email" class="form-control" placeholder="email"
+                maxlength="50">
+
+              <div *ngIf="email.invalid && (sobrenome.dirty || email.touched)" class="alert alert-danger">
+                <div *ngIf="email.errors.required">
+                  Campo email é obrigatório.
+                </div>
+
+                <div *ngIf="email.errors.minlength">
+                  Email deve ter no mínimo 2 caracteres.
+                </div>
+
+                <div *ngIf="email.errors.email">
+                  O email informado não é valido.
+                </div>
+
+              </div>
+            </div>
+
+            <div id="numeroPisFuncionario" class="form-group col-md-12 no-padding-left">
+              <label for="numeroPis">Numero PIS</label>
+              <input id="numeroPis" name="numeroPis" formControlName="numeroPis" class="form-control"
+                placeholder="Numero PIS" maxlength="50">
+
+              <div *ngIf="numeroPis.invalid && (numeroPis.dirty || numeroPis.touched)" class="alert alert-danger">
+                <div *ngIf="numeroPis.errors.required">
+                  Campo email é obrigatório.
+                </div>
+
+                <div *ngIf="numeroPis.errors.minlength">
+                  Sobrenome deve ter no mínimo 2 caracteres.
+                </div>
+
+              </div>
+            </div>
+
+            <button id="botaoVoltar" type="submit" class="btn btn-primary btn-space go-back" (click)="goBack()">
+              <i class="fa fa-arrow-left"></i> Voltar</button>
+
+            <button id="botaoSalvar" type="submit" class="btn btn-info add-new" (click)="salvar(funcionarioForm)"
+              [disabled]="funcionarioForm.invalid">
+              <i class="fa fa-save"></i> Salvar</button>
+          </div>
+        </div>
+      </div>
+    </form>
+  </div>
+</div>
